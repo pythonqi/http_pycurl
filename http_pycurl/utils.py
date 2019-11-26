@@ -72,7 +72,10 @@ def get_cookies_from_hist(hist):
     """Get cookie string from history response message"""
     result = []
     for item in hist:
-        request_line, headers_only = item.split('\r\n', 1)
+        try:
+            request_line, headers_only = item.split('\r\n', 1)
+        except ValueError:
+            return ''
         message = email.message_from_file(StringIO(headers_only))
         for key, value in message.items():
             if key.lower() == 'set-cookie':
