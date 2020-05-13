@@ -50,8 +50,10 @@ def get_headers_from_bytes(bytes):
             break
 
     hist_cookies_str = get_cookies_from_hist(hist)
-
-    request_line, headers_only = segment.split('\r\n', 1)
+    try:
+        request_line, headers_only = segment.split('\r\n', 1)
+    except ValueError:
+        return {}
     message = email.message_from_file(StringIO(headers_only))
 
     headers = CaseInsensitiveDict()
