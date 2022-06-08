@@ -136,4 +136,4 @@ However, **pycurl** can grab the right content. So I repackaged the **pycurl** f
 
 If you have any questions,you can contact me by the following email：
 
-luoyeqi@duoshoubang.cn
+pythonqi@outlook.com
